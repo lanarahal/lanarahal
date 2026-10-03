@@ -1,26 +1,26 @@
 {
   "collection": "AE3o4tmcnLHAX1PSSMsRLLnxV3eXAoidXnM7kXwS6cp5",
   "name": "Mini Toads",
-  "lastUpdated": "2026-10-03T01:10:00.000Z",
+  "lastUpdated": "2026-10-03T01:32:33.688Z",
   "items": [
     {
       "id": "BmFTTEoR59C1rPfBv7XKy3DBUqWFHym5JgYVpzz4dmaq",
-      "name": "Bob Ross Toad",
-      "image": null,
+      "name": "Mini Toad #04",
+      "image": "https://ipfs.io/ipfs/QmR6ntyoYXRh8DMgnKdz9v1j5TCHhqooAfadDdQaxaF8hF",
       "mallowUrl": "https://mallow.art/artwork/BmFTTEoR59C1rPfBv7XKy3DBUqWFHym5JgYVpzz4dmaq",
       "addedAt": 1759421237000
     },
     {
       "id": "F5bmWQLV3YUsNWLXczevKtQ8cLZ6pcYY8RKtU8HtQud8",
-      "name": "Itachi Toad",
-      "image": null,
+      "name": "Mini Toad #03",
+      "image": "https://ipfs.io/ipfs/Qme5qPnLiuAuCarf1RDWYQfB7PzmAiarnXfpcYo8K6dfin",
       "mallowUrl": "https://mallow.art/artwork/F5bmWQLV3YUsNWLXczevKtQ8cLZ6pcYY8RKtU8HtQud8",
       "addedAt": 1759345496000
     },
     {
       "id": "73SF3H7HmerW9FBiYfaihzst62WJaU1sV2jv4btoT8gv",
-      "name": "Deadpool Toad",
-      "image": null,
+      "name": "Mini Toad #02",
+      "image": "https://ipfs.io/ipfs/Qmdh8DRLMH5LnbMVdkkUL2yG3zM8KjukHLqAbnUJGeaFyP",
       "mallowUrl": "https://mallow.art/artwork/73SF3H7HmerW9FBiYfaihzst62WJaU1sV2jv4btoT8gv",
       "addedAt": 1759256009000
     },
