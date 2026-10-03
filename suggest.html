@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suggest Next Work — Lana Rahal</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="index.html" class="logo">lana<span>rahal</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="suggest.html" class="active">Suggest</a>
+        <a href="links.html">Links</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="padding-bottom:12px;">
+      <div class="container">
+        <h1>Suggest Next Work</h1>
+        <p>What should Lana create next? Add your idea and vote (one vote per idea).</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="form-card">
+          <div class="form-group">
+            <label for="idea">Your suggestion</label>
+            <input type="text" id="idea" placeholder="e.g. Mini Toad as a samurai chef..." maxlength="120" />
+          </div>
+          <button class="btn btn-primary" style="width:100%;" onclick="addSuggestion()">Submit idea</button>
+        </div>
+
+        <div class="suggest-list" id="list"></div>
+
+        <p style="text-align:center;margin-top:24px;font-size:0.85rem;color:var(--text-muted);">
+          Each person can vote only once per suggestion (stored in your browser).
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© Lana Rahal</p>
+    </div>
+  </footer>
+
+  <script>
+    const STORAGE_KEY = 'lanarahal_suggestions_v2';
+    const VOTED_KEY = 'lanarahal_voted_v2';
+
+    function loadSuggestions() {
+      try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); }
+      catch { return []; }
+    }
+    function saveSuggestions(list) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+    }
+    function loadVoted() {
+      try { return JSON.parse(localStorage.getItem(VOTED_KEY) || '[]'); }
+      catch { return []; }
+    }
+    function saveVoted(arr) {
+      localStorage.setItem(VOTED_KEY, JSON.stringify(arr));
+    }
+
+    function escapeHtml(str) {
+      const d = document.createElement('div');
+      d.textContent = str;
+      return d.innerHTML;
+    }
+
+    function render() {
+      const list = loadSuggestions();
+      const voted = loadVoted();
+      list.sort((a, b) => b.votes - a.votes);
+      const el = document.getElementById('list');
+      if (!list.length) {
+        el.innerHTML = '<div class="empty">No suggestions yet. Be the first!</div>';
+        return;
+      }
+      el.innerHTML = list.map((s) => {
+        const already = voted.includes(s.id);
+        return `
+          <div class="suggest-item">
+            <div class="text">${escapeHtml(s.text)}</div>
+            <button class="vote-btn ${already ? 'voted' : ''}" onclick="vote('${s.id}')" ${already ? 'disabled' : ''}>
+              ▲ ${s.votes}${already ? ' ✓' : ''}
+            </button>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function addSuggestion() {
+      const input = document.getElementById('idea');
+      const text = input.value.trim();
+      if (!text) return;
+      const list = loadSuggestions();
+      const id = 's_' + Date.now() + '_' + Math.random().toString(36).slice(2, 7);
+      list.push({ id, text, votes: 1 });
+      saveSuggestions(list);
+      // auto-mark as voted by submitter
+      const voted = loadVoted();
+      voted.push(id);
+      saveVoted(voted);
+      input.value = '';
+      render();
+    }
+
+    function vote(id) {
+      const voted = loadVoted();
+      if (voted.includes(id)) return;
+      const list = loadSuggestions();
+      const item = list.find(s => s.id === id);
+      if (!item) return;
+      item.votes += 1;
+      voted.push(id);
+      saveSuggestions(list);
+      saveVoted(voted);
+      render();
+    }
+
+    render();
+  </script>
+</body>
+</html>
