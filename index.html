@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Toads Gallery</title>
+  <meta name="description" content="Official gallery for Mini Toads collection on Solana. New pieces appear automatically." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Mini Toads</h1>
+      <p class="subtitle">Solana Collection · Auto-updated every 8 hours</p>
+      <div class="links">
+        <a href="https://mallow.art" target="_blank" rel="noopener">mallow.art</a>
+        <a href="https://solscan.io/account/AE3o4tmcnLHAX1PSSMsRLLnxV3eXAoidXnM7kXwS6cp5" target="_blank" rel="noopener">Collection on Solscan</a>
+        <a href="https://www.tensor.trade" target="_blank" rel="noopener">Tensor</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="stats" id="stats">
+      Loading collection...
+    </div>
+
+    <div class="gallery" id="gallery">
+      <!-- Cards will be injected here -->
+    </div>
+
+    <div class="empty" id="empty" style="display:none;">
+      <p>No pieces found yet. The gallery updates automatically when new artworks are added.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Collection: <code>AE3o4tmcnLHAX1PSSMsRLLnxV3eXAoidXnM7kXwS6cp5</code></p>
+      <p>Last checked: <span id="last-updated">—</span></p>
+      <p class="credit">Built for @rahal_art · Powered by GitHub Actions + Helius DAS</p>
+    </div>
+  </footer>
+
+  <script>
+    async function loadGallery() {
+      try {
+        const res = await fetch('./data/nfts.json?t=' + Date.now());
+        if (!res.ok) throw new Error('Failed to load data');
+        const data = await res.json();
+
+        const gallery = document.getElementById('gallery');
+        const stats = document.getElementById('stats');
+        const empty = document.getElementById('empty');
+        const lastUpdated = document.getElementById('last-updated');
+
+        lastUpdated.textContent = data.lastUpdated
+          ? new Date(data.lastUpdated).toLocaleString('en-US', {
+              dateStyle: 'medium',
+              timeStyle: 'short',
+              timeZone: 'UTC'
+            }) + ' UTC'
+          : '—';
+
+        const items = data.items || [];
+
+        if (items.length === 0) {
+          gallery.innerHTML = '';
+          empty.style.display = 'block';
+          stats.textContent = '0 pieces';
+          return;
+        }
+
+        empty.style.display = 'none';
+        stats.textContent = `${items.length} piece${items.length === 1 ? '' : 's'}`;
+
+        // Sort newest first
+        items.sort((a, b) => (b.addedAt || 0) - (a.addedAt || 0));
+
+        gallery.innerHTML = items.map(item => {
+          const name = item.name || 'Untitled';
+          const image = item.image || '';
+          const mint = item.id || '';
+          const mallowLink = item.mallowUrl || `https://mallow.art/artwork/${mint}`;
+          const tensorLink = `https://www.tensor.trade/item/${mint}`;
+          const solscanLink = `https://solscan.io/token/${mint}`;
+
+          return `
+            <article class="card">
+              <div class="image-wrap">
+                ${image
+                  ? `<img src="${image}" alt="${name}" loading="lazy" onerror="this.src='https://placehold.co/400x400/1a1a2e/eaeaea?text=No+Image'" />`
+                  : `<div class="no-image">No Image</div>`}
+              </div>
+              <div class="card-body">
+                <h2>${escapeHtml(name)}</h2>
+                <div class="card-links">
+                  <a href="${mallowLink}" target="_blank" rel="noopener">mallow</a>
+                  <a href="${tensorLink}" target="_blank" rel="noopener">Tensor</a>
+                  <a href="${solscanLink}" target="_blank" rel="noopener">Solscan</a>
+                </div>
+              </div>
+            </article>
+          `;
+        }).join('');
+      } catch (err) {
+        console.error(err);
+        document.getElementById('stats').textContent = 'Error loading gallery';
+        document.getElementById('empty').style.display = 'block';
+        document.getElementById('empty').innerHTML = '<p>Could not load data. Please try again later.</p>';
+      }
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    loadGallery();
+  </script>
+</body>
+</html>
