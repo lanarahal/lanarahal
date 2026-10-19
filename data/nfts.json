@@ -10,8 +10,17 @@
       "name": "Mini Faces"
     }
   ],
-  "lastUpdated": "2026-10-18T16:20:35.317Z",
+  "lastUpdated": "2026-10-19T00:26:30.287Z",
   "items": [
+    {
+      "id": "CRnp2X3DQDcYY1WwNTMvNi4xAhtbUXvqUDZpcAwUUnbh",
+      "name": "Mini face #92",
+      "image": "https://ipfs.io/ipfs/QmeMp1LDcM9xoTN99oaUFv7Ygu1SURLaSQo1dE7FJJLh2G",
+      "mallowUrl": "https://mallow.art/artwork/CRnp2X3DQDcYY1WwNTMvNi4xAhtbUXvqUDZpcAwUUnbh",
+      "collection": "Mini Faces",
+      "collectionId": "2nxF1CUDT2ffdTbcV9qYp2gQrN1xLB6H6Wu6eeGDgV9M",
+      "addedAt": 1792369590287
+    },
     {
       "id": "FXyC2yPvGaFWHjZmZfdNJkpG25Lbbn3uA7aZMCjcSHzj",
       "name": "Mini Toad #12",
