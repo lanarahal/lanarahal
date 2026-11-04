@@ -10,7 +10,7 @@
       "name": "Mini Faces"
     }
   ],
-  "lastUpdated": "2026-11-04T05:11:05.820Z",
+  "lastUpdated": "2026-11-04T15:59:24.562Z",
   "items": [
     {
       "id": "3ByF2RHsDGN7ZswNgpaYh1BDcQXrAgbzE6zGZNFM9fNg",
@@ -562,15 +562,6 @@
       "addedAt": 1791053915389
     },
     {
-      "id": "DAsXNzyqZTGtS4yRwCmj7a6UDcAZ3nwb5qJe5RPK5JrQ",
-      "name": "Mini face #73",
-      "image": "https://arweave.net/8-4IgEpzmRXV0f6gn3bYXK510kS17N-QIM0he2gKzU0?ext=png",
-      "mallowUrl": "https://mallow.art/artwork/DAsXNzyqZTGtS4yRwCmj7a6UDcAZ3nwb5qJe5RPK5JrQ",
-      "collection": "Mini Faces",
-      "collectionId": "2nxF1CUDT2ffdTbcV9qYp2gQrN1xLB6H6Wu6eeGDgV9M",
-      "addedAt": 1791053915389
-    },
-    {
       "id": "CwjDMGjHM3f9mxCLok866jxs8zqLXWyUQNvBhC6bJBwY",
       "name": "Mini face #02",
       "image": "https://arweave.net/vKnXqYareN4vi4626PFqME1fFw9eWra3zuUpq3vWD-c?ext=png",
@@ -836,6 +827,15 @@
       "name": "Mini face #33",
       "image": "https://arweave.net/etw1QdotNmY6WQu4J6FbhsSwb8TgWvNYb6Qrt6NBDeQ?ext=png",
       "mallowUrl": "https://mallow.art/artwork/5n8yjJrp2BnRZQgDpuizFjowxfB5HRRRhXFcQAzc27rv",
+      "collection": "Mini Faces",
+      "collectionId": "2nxF1CUDT2ffdTbcV9qYp2gQrN1xLB6H6Wu6eeGDgV9M",
+      "addedAt": 1791053915389
+    },
+    {
+      "id": "DAsXNzyqZTGtS4yRwCmj7a6UDcAZ3nwb5qJe5RPK5JrQ",
+      "name": "Mini face #73",
+      "image": "https://arweave.net/8-4IgEpzmRXV0f6gn3bYXK510kS17N-QIM0he2gKzU0?ext=png",
+      "mallowUrl": "https://mallow.art/artwork/DAsXNzyqZTGtS4yRwCmj7a6UDcAZ3nwb5qJe5RPK5JrQ",
       "collection": "Mini Faces",
       "collectionId": "2nxF1CUDT2ffdTbcV9qYp2gQrN1xLB6H6Wu6eeGDgV9M",
       "addedAt": 1791053915389
