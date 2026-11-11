@@ -10,8 +10,17 @@
       "name": "Mini Faces"
     }
   ],
-  "lastUpdated": "2026-11-11T05:02:03.703Z",
+  "lastUpdated": "2026-11-11T15:54:31.021Z",
   "items": [
+    {
+      "id": "A9DWawA79HVxra5XVvQQBEmXVkS6XoqmZDxrYmjY12Py",
+      "name": "Mini face #95",
+      "image": "https://ipfs.io/ipfs/QmYtnW8QcMxAkSmJBXKuDjgrSygAfso1EBv5ykNoNKiaRU",
+      "mallowUrl": "https://mallow.art/artwork/A9DWawA79HVxra5XVvQQBEmXVkS6XoqmZDxrYmjY12Py",
+      "collection": "Mini Faces",
+      "collectionId": "2nxF1CUDT2ffdTbcV9qYp2gQrN1xLB6H6Wu6eeGDgV9M",
+      "addedAt": 1794412471020
+    },
     {
       "id": "5jJK8NFrBZhkRuu3W6MEMxM5s4gVKBmQ7KyfKP2HTDHw",
       "name": "Mini face #94",
