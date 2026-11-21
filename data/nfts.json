@@ -10,8 +10,17 @@
       "name": "Mini Faces"
     }
   ],
-  "lastUpdated": "2026-11-20T16:45:09.638Z",
+  "lastUpdated": "2026-11-21T05:56:41.476Z",
   "items": [
+    {
+      "id": "8E95fcyGCPouhmW6yMFtUAK4r5ZuduabdLFuiH6CMYGE",
+      "name": "Mini Toad #19",
+      "image": "https://ipfs.io/ipfs/QmShoKaT2WvC8ezEkYwoWPxxy5Du6cVNFusmvAe7CS9Lsx",
+      "mallowUrl": "https://mallow.art/artwork/8E95fcyGCPouhmW6yMFtUAK4r5ZuduabdLFuiH6CMYGE",
+      "collection": "Mini Toads",
+      "collectionId": "AE3o4tmcnLHAX1PSSMsRLLnxV3eXAoidXnM7kXwS6cp5",
+      "addedAt": 1795240601205
+    },
     {
       "id": "46kTytdEkBoz5Jpgtg51AAnnhAeghsVy1iBm1YnFbnT7",
       "name": "Mini Toad #18",
@@ -337,15 +346,6 @@
       "addedAt": 1791053915390
     },
     {
-      "id": "3YBjunpj4G3cju7Rr6BhErV4UEbbY43pmXbvX95wkN5S",
-      "name": "Mini face #84",
-      "image": "https://ipfs.io/ipfs/QmeH4KVtrd8n2xRFzee7XjRVPUUpaFgCsY5bAqHRZVoKvD",
-      "mallowUrl": "https://mallow.art/artwork/3YBjunpj4G3cju7Rr6BhErV4UEbbY43pmXbvX95wkN5S",
-      "collection": "Mini Faces",
-      "collectionId": "2nxF1CUDT2ffdTbcV9qYp2gQrN1xLB6H6Wu6eeGDgV9M",
-      "addedAt": 1791053915390
-    },
-    {
       "id": "3WmdYMD71XSzFKG5iRhqEQchRao3ap153httYJLqtZqw",
       "name": "Mini face #51",
       "image": "https://arweave.net/pGgKmLYaXrpEsQvvMMDVXW4rO7Z6LmqWc3rzqsACMtc?ext=png",
@@ -458,6 +458,15 @@
       "name": "Mini face #65",
       "image": "https://arweave.net/VuVTELHwuRg4sVHZx1lN5Cl5aQpFyBpFnKtZW6uduCs?ext=png",
       "mallowUrl": "https://mallow.art/artwork/D6LscZhF1btgM7aziQ69LoDL3Qoipxs6MRxXv1Mya5F",
+      "collection": "Mini Faces",
+      "collectionId": "2nxF1CUDT2ffdTbcV9qYp2gQrN1xLB6H6Wu6eeGDgV9M",
+      "addedAt": 1791053915390
+    },
+    {
+      "id": "3YBjunpj4G3cju7Rr6BhErV4UEbbY43pmXbvX95wkN5S",
+      "name": "Mini face #84",
+      "image": "https://ipfs.io/ipfs/QmeH4KVtrd8n2xRFzee7XjRVPUUpaFgCsY5bAqHRZVoKvD",
+      "mallowUrl": "https://mallow.art/artwork/3YBjunpj4G3cju7Rr6BhErV4UEbbY43pmXbvX95wkN5S",
       "collection": "Mini Faces",
       "collectionId": "2nxF1CUDT2ffdTbcV9qYp2gQrN1xLB6H6Wu6eeGDgV9M",
       "addedAt": 1791053915390
